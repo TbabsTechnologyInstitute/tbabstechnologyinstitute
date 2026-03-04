@@ -1,0 +1,126 @@
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* === Faculty Insights Grid (from the blog-like quotes) === */
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin: 48px 0;
+}
+
+.faculty-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: 0 10px 25px -5px rgba(0,48,87,0.08);
+    border: 1px solid #e9edf2;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.faculty-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 30px -8px rgba(0,48,87,0.15);
+}
+
+.faculty-name {
+    font-weight: 700;
+    color: #ff6b35;
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+    letter-spacing: 0.3px;
+}
+
+.faculty-quote {
+    font-size: 1.1rem;
+    color: #1e2f3e;
+    font-style: normal;
+    line-height: 1.5;
+    quotes: none;
+}
+.faculty-quote::before {
+    content: "“";
+    font-size: 2rem;
+    color: #ff6b35;
+    opacity: 0.5;
+    margin-right: 4px;
+}
+
+
+/* === Global Companies / WBENC Section === */
+.global-section {
+    background: linear-gradient(145deg, #003057 0%, #001f3f 100%);
+    color: white;
+    padding: 70px 0;
+    border-radius: 24px;
+    margin: 50px 0;
+}
+
+.global-section .container {
+    position: relative;
+}
+
+.global-section h2 {
+    color: white;
+    border-bottom-color: #ff6b35;
+}
+
+.global-section p {
+    color: rgba(255,255,255,0.9);
+    font-size: 1.2rem;
+    max-width: 750px;
+}
+
+.wbe-badge {
+    display: inline-block;
+    background: #ff6b35;
+    padding: 12px 32px;
+    border-radius: 40px;
+    font-weight: 700;
+    margin-top: 28px;
+    color: #003057;
+    background: #ffb400; /* gold accent for women-owned */
+    border: none;
+}
+
+
+        /* === Testimonials (learner quotes) === */
+        .testimonials {
+            padding: 40px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+            margin: 40px 0;
+        }
+
+        .testimonial-card {
+            background: #ffffff;
+            border-left: 6px solid #ff6b35;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .testimonial-title {
+            font-weight: 700;
+            font-size: 1.4rem;
+            color: #003057;
+            margin-bottom: 12px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 16px;
+            color: #2c3e50;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #ff6b35;
+            text-align: right;
+        }
