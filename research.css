@@ -1,0 +1,98 @@
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem 2rem;
+}
+
+
+/* header / category bar */
+.category-header {
+  background-color: #f8f9fc;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e9edf4;
+  margin-bottom: 2rem;
+}
+
+.category-tag {
+  display: inline-block;
+  background-color: #eef2f7;
+  color: #1e3a6b;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
+  letter-spacing: 0.3px;
+  border: 1px solid #d0dbe8;
+}
+
+.category-tag + .category-tag {
+  margin-left: 0.75rem;
+}
+
+.wosb-section {
+    background-color: #0b1f33;
+    color: white;
+    padding: 3.5rem 3rem;
+    border-radius: 32px;
+    margin: 3rem 0;
+}
+
+.wosb-section h2 {
+    color: white;
+    border-bottom-color: #3d6184;
+}
+
+.wosb-section .section-subhead {
+    color: #9bb9df;
+}
+
+.wosb-highlight {
+    background: rgba(255,255,255,0.08);
+    padding: 2rem;
+    border-radius: 24px;
+    margin: 2rem 0 1rem;
+    border-left: 6px solid #6da1d0;
+}
+
+.btn-outline-light {
+    display: inline-block;
+    border: 2px solid white;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 2rem;
+    border-radius: 40px;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: 0.2s;
+}
+
+.btn-outline-light:hover {
+    background: white;
+    color: #0b1f33;
+}
+
+
+/* global companies section */
+.global-companies {
+    background: linear-gradient(145deg, #f0f5fb 0%, #ffffff 70%);
+    padding: 3rem;
+    border-radius: 32px;
+    margin: 4rem 0;
+}
+
+.global-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin: 2rem 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+.global-stats span {
+    background: #1e3a6b;
+    color: white;
+    padding: 0.3rem 1rem;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 1rem;
+}
