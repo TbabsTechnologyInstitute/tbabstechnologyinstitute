@@ -456,63 +456,7 @@ header {
   color: #475569;
 }
 
-/* ----- FOOTER (simple & clean) ----- */
-footer {
-  background: var(--text-dark);
-  color: #cbd5e1;
-  padding: 40px 0;
-}
-.footer-grid {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-.footer-copy i {
-  color: var(--accent-soft);
-}
-.footer-links a {
-  margin-left: 30px;
-  color: #cbd5e1;
-  transition: 0.2s;
-}
-.footer-links a:hover {
-  color: white;
-}
 
-/* footer */
-.footer {
-    background-color: #121210;
-    color: #a6a092;
-    padding: 2.5rem 0;
-    border-top: 3px solid var(--gold);
-}
-
-.footer .container {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.footer .logo i {
-    font-size: 2rem;
-}
-
-.footer-links {
-    display: flex;
-    gap: 3rem;
-}
-
-.footer-links a {
-    color: #c9c2b4;
-    text-decoration: none;
-}
-
-.footer-links a:hover {
-    color: var(--gold);
-}
 
 .social i {
     font-size: 1.8rem;
@@ -1075,6 +1019,76 @@ footer {
         .ta-info p {
             font-size: 0.8rem;
             color: #4570a3;
+        }
+
+        /* === FOOTER (cloned from IIL homepage style) === */
+        .site-footer {
+            background-color: #00203d;
+            color: #dfe9f3;
+            padding: 40px 0 24px;
+            font-size: 0.95rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            border-bottom: 1px solid #2f5577;
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #b7cfeb;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .footer-col a:hover {
+            color: #f5a300;
+        }
+
+        .copyright {
+            text-align: center;
+            color: #96b4d4;
+        }
+
+        hr {
+            border: 1px solid #2f5577;
+            margin: 20px 0;
+        }
+
+        /* responsive */
+        @media (max-width: 800px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .header-flex {
+                flex-direction: column;
+                gap: 16px;
+                align-items: start;
+            }
+        }
+        @media (max-width: 500px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .global-badge {
+                flex-direction: column;
+                gap: 16px;
+                border-radius: 32px;
+            }
         }
 
 
