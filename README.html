@@ -1,1 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IIL Clone | Services & Learning</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    }
 
+    body {
+      background-color: #ffffff;
+      color: #1a1e2b;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 2rem 2rem 3rem;
+    }
+
+    /* ===== section styles ===== */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      color: #0b1c3a;
+      border-bottom: 3px solid #ff6b35;
+      padding-bottom: 0.5rem;
+      display: inline-block;
+    }
+
+    .section-subhead {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: #2c3e5c;
+      margin-bottom: 1rem;
+    }
+
+    .overline {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #ff6b35;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    /* hero / category intro */
+    .category-hero {
+      background: linear-gradient(145deg, #f9faff 0%, #f0f3fd 100%);
+      border-radius: 2rem;
+      padding: 3rem 2.5rem;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 10px 25px -8px rgba(0,20,50,0.1);
+    }
+
+    .category-hero h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      color: #0a1a32;
+      max-width: 900px;
+    }
+
+    .category-hero p {
+      font-size: 1.2rem;
+      color: #2e405b;
+      max-width: 800px;
+      margin-bottom: 1.8rem;
+    }
+
+    .tagline {
+      display: inline-block;
+      background-color: #ff6b35;
+      color: white;
+      font-weight: 600;
+      padding: 0.4rem 1.2rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      letter-spacing: 0.3px;
+      margin-top: 0.5rem;
+    }
+
+    /* cards grid (learning categories / global companies) */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 3rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 1.5rem;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.02);
+      border: 1px solid #eaecf0;
+      transition: all 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: #ff9f7c;
+      box-shadow: 0 15px 30px -12px rgba(255,107,53,0.15);
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      color: #0b1c3a;
+    }
+
+    .service-card p {
+      color: #3f4b62;
+      font-size: 1rem;
+    }
+
+    .badge-icon {
+      display: inline-block;
+      background: #ffede5;
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      color: #ff6b35;
+      font-size: 1.8rem;
+      font-weight: 600;
+      text-align: center;
+      line-height: 48px;
+      margin-bottom: 1.2rem;
+    }
+
+    /* blog/expert insights row */
+    .insights-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 2.5rem 0 3rem;
+    }
+
+    .insight-item {
+      flex: 1 1 250px;
+      background: #fafbfe;
+      padding: 1.8rem;
+      border-radius: 1.5rem;
+      border-left: 6px solid #ff6b35;
+    }
+
+    .insight-author {
+      font-weight: 600;
+      color: #0b1c3a;
+      margin-bottom: 0.25rem;
+    }
+
+    .insight-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0.5rem 0 0.75rem;
+    }
+
+    .insight-excerpt {
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    /* testimonial grid */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0 3.5rem;
+    }
+
+    .testimonial-card {
+      background: #ffffff;
+      border-radius: 1.8rem;
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(0,20,40,0.04);
+      border: 1px solid #e9edf4;
+    }
+
+    .testimonial-card .course-name {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: #ff6b35;
+      margin-bottom: 0.75rem;
+    }
+
+    .testimonial-card .quote {
+      font-size: 1rem;
+      font-style: italic;
+      color: #1f2a44;
+      margin: 1rem 0;
+    }
+
+    .testimonial-card .name {
+      font-weight: 600;
+      color: #0e213b;
+      border-top: 1px dashed #cdd5e0;
+      padding-top: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    /* global companies / certifications */
+    .global-section {
+      background: #f4f7fd;
+      border-radius: 2.5rem;
+      padding: 2.5rem 2rem;
+      margin: 3rem 0 2.5rem;
+    }
+
+    .companies-banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .companies-banner p {
+      font-size: 1.2rem;
+      font-weight: 500;
+      max-width: 600px;
+    }
+
+    .stats-mini {
+      display: flex;
+      gap: 2rem;
+      font-weight: 600;
+      color: #0b1c3a;
+    }
+
+    .cert-block {
+      background: white;
+      padding: 2rem;
+      border-radius: 2rem;
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cert-block h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #0b1c3a;
+    }
+
+    .cert-block .small {
+      color: #ff6b35;
+      font-weight: 600;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #ff6b35;
+      color: #ff6b35;
+      padding: 0.8rem 2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: default;
+      transition: 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #ff6b35;
+      color: white;
+    }
+
+    /* utility */
+    .text-large {
+      font-size: 1.25rem;
+      color: #2a3b5a;
+      margin-bottom: 1.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid #e2e8f0;
+      margin: 2.5rem 0 1.5rem;
+    }
+
+    .small-note {
+      font-size: 0.9rem;
+      color: #64748b;
+      margin-top: 0.5rem;
+    }
+
+    /* mimic global footer / closing */
+    .foot-note {
+      background: #0b1c3a;
+      color: white;
+      padding: 2rem;
+      border-radius: 2rem;
+      margin-top: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .foot-note p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- category intro / hero (exactly as iil text) -->
+    <div class="category-hero">
+      <span class="overline">Learning Categories</span>
+      <h1>Gain the Skills of Tomorrow, Today.</h1>
+      <p>In a world that never stops moving, The IIL team ensures you are always a step ahead. We don’t just teach—we transform. By merging the discipline of Project Management and the adaptability of Agile with visionary Leadership and the transformative power of AI, our solutions are available for individuals, teams, and organizations through our flexible private training options.</p>
+      <div class="tagline">International Institute for Learning · since 1992</div>
+    </div>
+
+    <!-- blog/thought leadership excerpts (by Gabor, Jane, Luigi) -->
+    <div class="insights-row">
+      <div class="insight-item">
+        <div class="insight-author">By Gabor Stramb</div>
+        <div class="insight-title">Project managers keep asking the same questions about the PMP. So let’s clear it up.</div>
+        <div class="insight-excerpt">Common PMP certification myths—and the truth behind exam prep, application, and agility.</div>
+      </div>
+      <div class="insight-item">
+        <div class="insight-author">By Jane Morgan</div>
+        <div class="insight-title">We’ll review something I see increasingly: a shift in how we perceive and interact with AI.</div>
+        <div class="insight-excerpt">And that shift, I believe, is not just useful—it’s essential for modern leaders.</div>
+      </div>
+      <div class="insight-item">
+        <div class="insight-author">By Luigi Morsa and Richard Maltzman</div>
+        <div class="insight-title">At its core, servant leadership emphasizes attentive listening and prioritizing the needs of others.</div>
+        <div class="insight-excerpt">How servant leadership transforms project teams and creates psychological safety.</div>
+      </div>
+    </div>
+
+    <!-- WHY IIL section (card grid from original) -->
+    <h2 class="section-title">Why IIL</h2>
+    <p class="text-large">For over 30 years, the International Institute for Learning has been a global leader in high quality education, training, and organizational learning for more than 2 Million individuals.</p>
+
+    <div class="card-grid">
+      <div class="service-card">
+        <div class="badge-icon">🌐</div>
+        <h3>Global Reach</h3>
+        <p>With strategically located offices around the world, serving 100+ countries in 20+ languages.</p>
+      </div>
+      <div class="service-card">
+        <div class="badge-icon">📈</div>
+        <h3>Scalable</h3>
+        <p>IIL serves all sizes – including individual learners, small to large groups, and entire organizations.</p>
+      </div>
+      <div class="service-card">
+        <div class="badge-icon">✨</div>
+        <h3>Personal, Tailored Learning</h3>
+        <p>IIL's curriculum can be tailored to corporate needs, understanding market trends in specific industries.</p>
+      </div>
+      <div class="service-card">
+        <div class="badge-icon">📘</div>
+        <h3>Study Materials</h3>
+        <p>Utilize IIL's free resources, including white papers, the bookstore, LinkedIn groups, and the Thought Leadership Newsletter.</p>
+      </div>
+      <div class="service-card">
+        <div class="badge-icon">⏳</div>
+        <h3>30+ years of experience</h3>
+        <p>When it comes to business agility and resiliency with changing economic trends, trust IIL.</p>
+      </div>
+      <div class="service-card">
+        <div class="badge-icon">🔄</div>
+        <h3>Maintaining your certification</h3>
+        <p>Maintain your certification with IIL's free webinars and online conferences.</p>
+      </div>
+    </div>
+
+    <!-- learner testimonials (exactly as provided) -->
+    <h2 class="section-title">Discover what learners have to say about IIL's courses!</h2>
+
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="course-name">Emotional Intelligence for Project Managers</div>
+        <div class="quote">"Excellent Facilitation! I found the course very valuable, I stopped and made notes on what I can take back to the office as well as my personal life! I very much enjoyed the examples and exercises. I would take another course with the trainer she was most effect!"</div>
+        <div class="name">– Shaneela V.</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="course-name">PM Overview</div>
+        <div class="quote">"Overall, a great course! I have been in project management officially for almost a year and this back-to-basics review really helps solidify how to be better with managing projects. It was nice to have a better Definition of terms/concepts that I use daily as a project manager and visuals explaining each of the concepts also helped."</div>
+        <div class="name">– Scott A.</div>
+      </div>
+    </div>
+
+    <!-- IIL Global Companies + reach (exact copy) -->
+    <div class="global-section">
+      <h2 class="section-title" style="border-bottom-color:#ff6b35;">IIL Global Companies</h2>
+      <div class="companies-banner">
+        <p>With 17 offices spread around the world, IIL has a global reach of 100+ countries in 20+ languages. We are able to provide professional training that your organization needs, anywhere in the world.</p>
+        <div class="stats-mini">
+          <span>🌍 17 offices</span>
+          <span>🗣️ 20+ languages</span>
+        </div>
+      </div>
+
+      <!-- WBENC & WOSB certified block -->
+      <div class="cert-block">
+        <div>
+          <h3>WBENC & WOSB Certified Business</h3>
+          <p style="font-size: 1.3rem; font-weight: 500; margin: 0.5rem 0 0.25rem;">Think Big. Think Women-Owned.</p>
+          <p style="max-width: 700px;">IIL is a proud woman-owned small business (WOSB), certified as a Women’s Business Enterprise (WBE), partnering with Fortune 500 Companies and Industry Leaders to elevate their workforce.</p>
+          <p style="margin-top: 1rem; color: #1f3a68;">Is your company focused on social responsibility and is looking to partner with diverse suppliers? WBENC certification demonstrates our commitment to diversity and inclusion, a wider range of potential partners and perspectives, and a greater supplier reliability; leading to increased profitability and innovation!</p>
+        </div>
+        <div class="btn-outline">WBENC certified →</div>
+      </div>
+    </div>
+
+    <!-- final: Our Learning Solutions (exact footer-like phrase) -->
+    <hr>
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; margin: 1rem 0 2rem;">
+      <div style="font-size: 1.4rem; font-weight: 600; color: #0b1c3a;">Our Learning Solutions</div>
+      <p style="color: #2d3a5e; max-width: 700px;">include customized learning programs, online conferences, professional certification courses designed to enhance essential business skills.</p>
+    </div>
+
+    <!-- simple footer mimicking iil global presence -->
+    <div class="foot-note">
+      <p>© 2026 International Institute for Learning, Inc. (IIL) — All rights reserved.</p>
+      <p style="font-size: 0.95rem;">📍 17 offices · 100+ countries · 2M+ learners</p>
+    </div>
+
+    <!-- subtle design note: all textual content is taken exactly from the provided iil.com page -->
+      <img src="image\PMP-homepage-banner.webp" style="width:350px" alt="">
+  </div>
+</body>
+</html>
