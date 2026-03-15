@@ -539,7 +539,7 @@ header {
 
 .project-img.img1 { background-image: linear-gradient(135deg, #615b4b, #b69e73), url('../image/DJI_0267-1-scaled.jpeg'); background-blend-mode: overlay; }
 .project-img.img2 { background-image: linear-gradient(45deg, #4f503b, #8b7c61), url('../image/capa-site.png'); background-blend-mode: soft-light; }
-.project-img.img3 { background-image: linear-gradient(160deg, #565138, #a08b60), url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%2380755b%22/><circle cx=%2260%22 cy=%2230%22 r=%2215%22 fill=%22%23dbbc7c%22/><circle cx=%2230%22 cy=%2260%22 r=%2220%22 fill=%22%23aa8749%22/><path d=%22M70 80 L20 70 L40 90%22 stroke=%22%23efd8a8%22 stroke-width=%225%22/></svg>'); background-blend-mode: luminosity; }
+.project-img.img3 { background-image: linear-gradient(160deg, #565138, #a08b60), url('../image/PMP-homepage-banner.jepg'); background-blend-mode: luminosity; }
 
 .project-content {
     padding: 1.8rem 1.5rem;
